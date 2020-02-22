@@ -8,12 +8,12 @@ import{Button} from 'react-bootstrap'
 
 class Add extends Component {
     state={
-        value:"",
+        newtask:"",
         
     }
     
     onChangeValue =(event) => {
-        this.setState({value : event.target.value} );
+        this.setState({newtask : event.target.value} );
       
       }
     render() {
@@ -27,7 +27,8 @@ class Add extends Component {
                 <div class="col-12">
                     
                 <input type="text" value={this.state.value} onChange={this.onChangeValue}/>
-                <Button variant="success" onClick={()=>{this.props.addTask(this.state.value)}} >+</Button>
+                <Button variant="success" onClick={()=>{this.props.addTask({id: Date.now(), newtask: this.state.newtask})}} >+</Button>
+                {/* <Button variant="success" onClick={()=>{this.props.addTask(this.state.value)}} >+</Button> */}
                 {/* <button class="primary" onClick={()=>{this.props.addTask(this.state.value)}}>+</button> */}
                 <span></span>
                     </div>

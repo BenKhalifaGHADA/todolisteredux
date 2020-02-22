@@ -18,11 +18,13 @@ class Task extends Component {
                 <Button variant="secondary" onClick={()=>this.props.delete(this.props.id)}>
               Delete
             </Button>
-            <Input/>
+            <Input id={this.props.id}/>
             </div>
         )
     }
 }
+
+
 const mapDispatchToProps=dispatch=>({
     delete:(id)=>dispatch(deleteTask(id))
     
